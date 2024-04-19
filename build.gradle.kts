@@ -25,7 +25,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            api(libs.kotlinx.coroutines.core)
+            api(libs.koin.core)
+            api(libs.koin.test)
         }
         commonTest.dependencies {
         }
@@ -36,7 +38,9 @@ kotlin {
             implementation(libs.compose.material3)
             implementation(libs.androidx.activity.compose)
             implementation(libs.compose.ui.tooling)
+            api(libs.koin.android)
         }
+        iosMain.dependencies{}
     }
 }
 

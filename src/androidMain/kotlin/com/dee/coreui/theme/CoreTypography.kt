@@ -44,6 +44,8 @@ class CoreAppTextStyle(
  * Core App custom Typography
  */
 interface CoreTypographyI {
+    val text12: CoreAppTextStyleI
+    val text14: CoreAppTextStyleI
     val text16: CoreAppTextStyleI
     val text18: CoreAppTextStyleI
     val text20: CoreAppTextStyleI
@@ -61,6 +63,13 @@ interface CoreTypographyI {
 class CoreTypography(fontFamily: FontFamily) : CoreTypographyI {
 
     private val baseTextStyle = TextStyle(fontFamily = fontFamily)
+
+    override val text12: CoreAppTextStyleI
+        get() = CoreAppTextStyle(baseTextStyle, fontSize = 12.sp)
+
+    override val text14: CoreAppTextStyleI
+        get() = CoreAppTextStyle(baseTextStyle, fontSize = 14.sp)
+
     override val text16: CoreAppTextStyleI
         get() = CoreAppTextStyle(baseTextStyle, fontSize = 16.sp)
 
