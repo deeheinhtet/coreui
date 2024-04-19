@@ -28,6 +28,8 @@ kotlin {
             api(libs.kotlinx.coroutines.core)
             api(libs.koin.core)
             api(libs.koin.test)
+            api(libs.mvvm.core) // only ViewModel, EventsDispatcher, Dispatchers.UI
+            api(libs.mvvm.flow)
         }
         commonTest.dependencies {
         }
