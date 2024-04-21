@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
 kotlin {
@@ -30,6 +31,8 @@ kotlin {
             api(libs.koin.test)
             api(libs.mvvm.core) // only ViewModel, EventsDispatcher, Dispatchers.UI
             api(libs.mvvm.flow)
+            api(projects.shared.coreCommon)
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
         }
         commonTest.dependencies {
         }
